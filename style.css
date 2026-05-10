@@ -4,11 +4,10 @@
   --bg-2: #14142b;
   --fg: #e8e8f5;
   --fg-dim: #8a8aa8;
-  --neon-cyan: #00e5ff;
-  --neon-magenta: #ff2bd6;
-  --neon-violet: #8a5cff;
+  --brand-light: #0053fc;
+  --brand-dark: #002bb5;
   --border: rgba(255, 255, 255, 0.08);
-  --border-bright: rgba(0, 229, 255, 0.35);
+  --border-bright: rgba(0, 83, 252, 0.4);
 
   --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
     Menlo, Consolas, monospace;
@@ -51,10 +50,10 @@ body {
   pointer-events: none;
   background-image: linear-gradient(
       to right,
-      rgba(0, 229, 255, 0.06) 1px,
+      rgba(0, 83, 252, 0.07) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(0, 229, 255, 0.06) 1px, transparent 1px);
+    linear-gradient(to bottom, rgba(0, 83, 252, 0.07) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse at 50% 30%, black 0%, transparent 75%);
   -webkit-mask-image: radial-gradient(
@@ -93,13 +92,13 @@ body {
   opacity: 0.45;
 }
 .glow::before {
-  background: var(--neon-cyan);
+  background: var(--brand-light);
   top: -180px;
   left: -120px;
   animation: float-a 14s ease-in-out infinite alternate;
 }
 .glow::after {
-  background: var(--neon-magenta);
+  background: var(--brand-dark);
   bottom: -200px;
   right: -140px;
   animation: float-b 18s ease-in-out infinite alternate;
@@ -141,14 +140,14 @@ body {
   place-items: center;
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(4px);
-  box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.05),
-    0 20px 60px -20px rgba(0, 229, 255, 0.25);
+  box-shadow: 0 0 0 1px rgba(0, 83, 252, 0.06),
+    0 20px 60px -20px rgba(0, 83, 252, 0.3);
   transition: transform 200ms ease, box-shadow 300ms ease;
 }
 .logo-slot:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 0 1px var(--border-bright),
-    0 24px 70px -20px rgba(0, 229, 255, 0.45);
+    0 24px 70px -20px rgba(0, 83, 252, 0.5);
 }
 .logo {
   max-width: 78%;
@@ -170,19 +169,18 @@ body {
   margin: 0 0 16px;
   background: linear-gradient(
     100deg,
-    var(--neon-cyan) 0%,
-    var(--neon-violet) 55%,
-    var(--neon-magenta) 100%
+    var(--brand-light) 0%,
+    var(--brand-dark) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 40px rgba(0, 229, 255, 0.15);
+  text-shadow: 0 0 40px rgba(0, 83, 252, 0.2);
 }
 .wordmark .dot {
-  color: var(--neon-magenta);
-  -webkit-text-fill-color: var(--neon-magenta);
-  text-shadow: 0 0 14px var(--neon-magenta);
+  color: var(--brand-light);
+  -webkit-text-fill-color: var(--brand-light);
+  text-shadow: 0 0 14px var(--brand-light);
 }
 
 .tagline {
@@ -193,9 +191,9 @@ body {
   letter-spacing: 0.02em;
 }
 .tagline .sep {
-  color: var(--neon-cyan);
+  color: var(--brand-light);
   margin: 0 0.5em;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* Theme tags */
@@ -222,7 +220,7 @@ body {
 .tag:hover {
   color: var(--fg);
   border-color: var(--border-bright);
-  background: rgba(0, 229, 255, 0.06);
+  background: rgba(0, 83, 252, 0.07);
   transform: translateY(-1px);
 }
 
@@ -237,28 +235,27 @@ body {
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  color: #05050a;
+  color: #ffffff;
   background: linear-gradient(
     100deg,
-    var(--neon-cyan) 0%,
-    var(--neon-violet) 60%,
-    var(--neon-magenta) 100%
+    var(--brand-light) 0%,
+    var(--brand-dark) 100%
   );
   background-size: 200% 100%;
   background-position: 0% 50%;
-  box-shadow: 0 10px 40px -10px rgba(0, 229, 255, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  box-shadow: 0 10px 40px -10px rgba(0, 83, 252, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
   transition: background-position 600ms ease, transform 200ms ease,
     box-shadow 300ms ease;
 }
 .cta:hover {
   background-position: 100% 50%;
   transform: translateY(-1px);
-  box-shadow: 0 14px 50px -10px rgba(255, 43, 214, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  box-shadow: 0 14px 50px -10px rgba(0, 43, 181, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 .cta:focus-visible {
-  outline: 2px solid var(--neon-cyan);
+  outline: 2px solid var(--brand-light);
   outline-offset: 3px;
 }
 
@@ -282,11 +279,11 @@ body {
 .github:hover {
   color: var(--fg);
   border-color: var(--border-bright);
-  background: rgba(0, 229, 255, 0.05);
+  background: rgba(0, 83, 252, 0.07);
   transform: translateY(-1px);
 }
 .github:focus-visible {
-  outline: 2px solid var(--neon-cyan);
+  outline: 2px solid var(--brand-light);
   outline-offset: 3px;
 }
 
@@ -306,7 +303,7 @@ body {
   flex-wrap: wrap;
 }
 .prompt {
-  color: var(--neon-cyan);
+  color: var(--brand-light);
 }
 .cursor {
   display: inline-block;
