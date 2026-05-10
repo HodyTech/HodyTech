@@ -1,6 +1,6 @@
 # hody.tech
 
-Personal tech-identity landing page for **Hoda Helmoinzadeh** — Tech · Development · Coding · GitHub · Gaming.
+Personal tech-identity landing page for **Hodahel Moinzadeh** — Tech · Development · Coding · GitHub · Gaming.
 
 Live at: <https://hody.tech>
 Personal site: <https://hodahelmoinzadeh.com>
@@ -57,4 +57,4 @@ python3 -m http.server 8000
 
 ## License
 
-© 2026 Hoda Helmoinzadeh. All rights reserved.
+© 2026 Hodahel Moinzadeh. All rights reserved.
