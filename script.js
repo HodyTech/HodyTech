@@ -12,6 +12,57 @@
     });
   }
 
+  // Contact form -> Formspree (async, no page navigation).
+  const form = document.getElementById("contact-form");
+  const btn = document.getElementById("submit-btn");
+  const msg = document.getElementById("form-msg");
+  if (form && btn && msg) {
+    const label = btn.textContent;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      msg.className = "";
+      msg.textContent = "";
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok) throw new Error("Bad response");
+        msg.className = "ok";
+        msg.textContent = "✓ Message sent — hody will get back to you soon.";
+        form.reset();
+      } catch {
+        msg.className = "err";
+        msg.textContent = "✗ Something went wrong. Please try again.";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    });
+  }
+
+  // Reveal-on-scroll for service cards (skipped under reduced motion).
+  const revealEls = document.querySelectorAll(".reveal");
+  if (!reduced && "IntersectionObserver" in window && revealEls.length) {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add("visible"), i * 80);
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    revealEls.forEach((el) => obs.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("visible"));
+  }
+
   // Subtle parallax on the neon glow blobs (pointer only, skipped if reduced motion).
   if (reduced) return;
   const glow = document.querySelector(".glow");
