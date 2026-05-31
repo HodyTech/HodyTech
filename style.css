@@ -115,15 +115,22 @@ body {
   }
 }
 
+/* Main wrapper holds the stacked sections */
+main {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
 /* Hero */
 .hero {
   position: relative;
   z-index: 1;
-  flex: 1;
   max-width: 720px;
   width: 100%;
   margin: 0 auto;
-  padding: clamp(48px, 10vw, 96px) 24px 32px;
+  padding: clamp(48px, 10vw, 96px) 24px 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,9 +168,9 @@ body {
 
 .wordmark {
   font-family: var(--font-mono);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-size: clamp(2.6rem, 9vw, 4.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.9rem, 10vw, 5.25rem);
   line-height: 1;
   margin: 0 0 16px;
   background: linear-gradient(
@@ -176,10 +183,41 @@ body {
   color: transparent;
   text-shadow: 0 0 40px rgba(0, 83, 252, 0.2);
 }
-.wordmark .dot {
-  color: var(--brand-light);
-  -webkit-text-fill-color: var(--brand-light);
-  text-shadow: 0 0 14px var(--brand-light);
+/* Blinking terminal caret after the wordmark */
+.wordmark .caret {
+  display: inline-block;
+  width: 0.12em;
+  height: 0.86em;
+  margin-left: 0.12em;
+  border-radius: 2px;
+  vertical-align: -0.04em;
+  background: linear-gradient(
+    100deg,
+    var(--brand-light) 0%,
+    var(--brand-dark) 100%
+  );
+  box-shadow: 0 0 18px rgba(0, 83, 252, 0.5);
+  animation: caret-blink 1.05s steps(2, end) infinite;
+}
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Inline brand name — matches the wordmark (lowercase mono + gradient) */
+.brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    100deg,
+    var(--brand-light) 0%,
+    var(--brand-dark) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .tagline {
@@ -325,7 +363,225 @@ body {
   .grid-overlay,
   .glow::before,
   .glow::after,
-  .cursor {
+  .cursor,
+  .wordmark .caret {
     animation: none;
   }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Services + Contact (richer single page)
+   Reuses the existing tokens, borders, and hover language.
+   ============================================================ */
+
+.tagline {
+  margin-bottom: 18px;
+}
+
+.hero-sub {
+  max-width: 540px;
+  margin: 0 0 32px;
+  color: var(--fg-dim);
+  font-size: clamp(0.95rem, 2.4vw, 1.05rem);
+  line-height: 1.65;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* Shared section scaffolding */
+.services,
+.contact {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 72px) 24px;
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-light);
+  margin: 0 0 8px;
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+  margin: 0 0 28px;
+  color: var(--fg);
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.service-card {
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 200ms ease, background 200ms ease,
+    transform 200ms ease, box-shadow 300ms ease;
+}
+.service-card:hover {
+  border-color: var(--border-bright);
+  background: rgba(0, 83, 252, 0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 60px -28px rgba(0, 83, 252, 0.45);
+}
+.service-card h3 {
+  font-family: var(--font-mono);
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--fg);
+}
+.service-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--fg-dim);
+}
+
+/* Contact */
+.contact-sub {
+  max-width: 540px;
+  margin: 0 0 28px;
+  color: var(--fg-dim);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.contact-form {
+  display: grid;
+  gap: 14px;
+  max-width: 520px;
+}
+.field {
+  display: grid;
+  gap: 6px;
+}
+.field label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.field input,
+.field textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+.field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(138, 138, 168, 0.55);
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--border-bright);
+  background: rgba(0, 83, 252, 0.05);
+}
+
+.btn-submit {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: linear-gradient(
+    100deg,
+    var(--brand-light) 0%,
+    var(--brand-dark) 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  box-shadow: 0 10px 40px -12px rgba(0, 83, 252, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  transition: background-position 600ms ease, transform 200ms ease,
+    box-shadow 300ms ease, opacity 200ms ease;
+}
+.btn-submit:hover:not(:disabled) {
+  background-position: 100% 50%;
+  transform: translateY(-1px);
+}
+.btn-submit:focus-visible {
+  outline: 2px solid var(--brand-light);
+  outline-offset: 3px;
+}
+.btn-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+#form-msg {
+  margin: 4px 0 0;
+  min-height: 1.2em;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+#form-msg.ok {
+  color: #3ddc97;
+}
+#form-msg.err {
+  color: #ff6b6b;
+}
+
+/* Secondary links row */
+.secondary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.secondary-links .github {
+  margin-top: 0;
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 550ms ease, transform 550ms ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
 }
