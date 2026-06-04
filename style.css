@@ -1,13 +1,13 @@
 :root {
   --bg-0: #05050a;
-  --bg-1: #0a0a14;
-  --bg-2: #14142b;
+  --bg-1: #120d08;
+  --bg-2: #241a0e;
   --fg: #e8e8f5;
   --fg-dim: #8a8aa8;
-  --brand-light: #0053fc;
-  --brand-dark: #5b00fc;
+  --brand-light: #fd8d27;
+  --brand-dark: #d45b01;
   --border: rgba(255, 255, 255, 0.08);
-  --border-bright: rgba(0, 83, 252, 0.4);
+  --border-bright: rgba(253, 141, 39, 0.4);
 
   --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
     Menlo, Consolas, monospace;
@@ -50,10 +50,10 @@ body {
   pointer-events: none;
   background-image: linear-gradient(
       to right,
-      rgba(0, 83, 252, 0.07) 1px,
+      rgba(253, 141, 39, 0.07) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(0, 83, 252, 0.07) 1px, transparent 1px);
+    linear-gradient(to bottom, rgba(253, 141, 39, 0.07) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse at 50% 30%, black 0%, transparent 75%);
   -webkit-mask-image: radial-gradient(
@@ -145,15 +145,15 @@ main {
   border-radius: 24px;
   display: grid;
   place-items: center;
-  background-color: #0c1129;
-  box-shadow: 0 0 0 1px rgba(0, 83, 252, 0.06),
-    0 20px 60px -20px rgba(0, 83, 252, 0.3);
+  background-color: #1a1206;
+  box-shadow: 0 0 0 1px rgba(253, 141, 39, 0.06),
+    0 20px 60px -20px rgba(253, 141, 39, 0.3);
   transition: transform 200ms ease, box-shadow 300ms ease;
 }
 .logo-slot:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 0 1px var(--border-bright),
-    0 24px 70px -20px rgba(0, 83, 252, 0.5);
+    0 24px 70px -20px rgba(253, 141, 39, 0.5);
 }
 .logo {
   max-width: 78%;
@@ -181,7 +181,7 @@ main {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 40px rgba(0, 83, 252, 0.2);
+  text-shadow: 0 0 40px rgba(253, 141, 39, 0.2);
 }
 /* Blinking terminal caret after the wordmark */
 .wordmark .caret {
@@ -196,7 +196,7 @@ main {
     var(--brand-light) 0%,
     var(--brand-dark) 100%
   );
-  box-shadow: 0 0 18px rgba(0, 83, 252, 0.5);
+  box-shadow: 0 0 18px rgba(253, 141, 39, 0.5);
   animation: caret-blink 1.05s steps(2, end) infinite;
 }
 @keyframes caret-blink {
@@ -257,7 +257,7 @@ main {
 .tag:hover {
   color: var(--fg);
   border-color: var(--border-bright);
-  background: rgba(0, 83, 252, 0.07);
+  background: rgba(253, 141, 39, 0.07);
   transform: translateY(-1px);
 }
 
@@ -280,7 +280,7 @@ main {
   );
   background-size: 200% 100%;
   background-position: 0% 50%;
-  box-shadow: 0 10px 40px -10px rgba(0, 83, 252, 0.6),
+  box-shadow: 0 10px 40px -10px rgba(253, 141, 39, 0.6),
     0 0 0 1px rgba(255, 255, 255, 0.08) inset;
   transition: background-position 600ms ease, transform 200ms ease,
     box-shadow 300ms ease;
@@ -288,7 +288,7 @@ main {
 .cta:hover {
   background-position: 100% 50%;
   transform: translateY(-1px);
-  box-shadow: 0 14px 50px -10px rgba(0, 43, 181, 0.7),
+  box-shadow: 0 14px 50px -10px rgba(212, 91, 1, 0.7),
     0 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 .cta:focus-visible {
@@ -316,7 +316,7 @@ main {
 .github:hover {
   color: var(--fg);
   border-color: var(--border-bright);
-  background: rgba(0, 83, 252, 0.07);
+  background: rgba(253, 141, 39, 0.07);
   transform: translateY(-1px);
 }
 .github:focus-visible {
@@ -443,9 +443,9 @@ main {
 }
 .service-card:hover {
   border-color: var(--border-bright);
-  background: rgba(0, 83, 252, 0.06);
+  background: rgba(253, 141, 39, 0.06);
   transform: translateY(-2px);
-  box-shadow: 0 20px 60px -28px rgba(0, 83, 252, 0.45);
+  box-shadow: 0 20px 60px -28px rgba(253, 141, 39, 0.45);
 }
 .service-card h3 {
   font-family: var(--font-mono);
@@ -510,7 +510,7 @@ main {
 .field input:focus,
 .field textarea:focus {
   border-color: var(--border-bright);
-  background: rgba(0, 83, 252, 0.05);
+  background: rgba(253, 141, 39, 0.05);
 }
 
 .btn-submit {
@@ -533,7 +533,7 @@ main {
   );
   background-size: 200% 100%;
   background-position: 0% 50%;
-  box-shadow: 0 10px 40px -12px rgba(0, 83, 252, 0.6),
+  box-shadow: 0 10px 40px -12px rgba(253, 141, 39, 0.6),
     0 0 0 1px rgba(255, 255, 255, 0.08) inset;
   transition: background-position 600ms ease, transform 200ms ease,
     box-shadow 300ms ease, opacity 200ms ease;
