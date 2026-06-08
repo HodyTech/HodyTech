@@ -31,6 +31,9 @@
     />
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Cloudflare Turnstile (spam/bot protection for the contact form) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -186,6 +189,14 @@
               required
             ></textarea>
           </div>
+
+          <!-- Cloudflare Turnstile widget — injects the cf-turnstile-response token -->
+          <div
+            class="cf-turnstile"
+            data-sitekey="0x4AAAAAAC1AMnPRGEua_Ftg"
+            data-theme="dark"
+          ></div>
+
           <button type="submit" class="btn-submit" id="submit-btn">
             Send message →
           </button>
