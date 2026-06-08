@@ -40,6 +40,10 @@
       } finally {
         btn.disabled = false;
         btn.textContent = label;
+        // Turnstile tokens are single-use; refresh the widget for any retry/next submit.
+        try {
+          window.turnstile?.reset();
+        } catch {}
       }
     });
   }
