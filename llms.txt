@@ -1,0 +1,18 @@
+# HODY
+
+> HODY is the technology consulting practice of Hodahel Moinzadeh ("Hody"), an AI
+> Systems Engineer. HODY offers IT & technology consulting, AI consulting and setup,
+> systems automation and development, DevOps, and custom software development.
+
+## Key facts
+- Website: https://hody.dev
+- Founder: Hodahel Moinzadeh (Hody), AI Systems Engineer
+- Services: IT/technology consulting; AI consulting & setup; systems automation &
+  development; DevOps (CI/CD, containers, infrastructure-as-code); custom software.
+- Area served: Worldwide (remote)
+- Contact: contact form at https://hody.dev
+- Related: portfolio https://hodahelmoinzadeh.com · GitHub https://github.com/hodyhq
+
+## What HODY is known for
+Practical, ship-it AI integration and infrastructure automation — building systems
+that run themselves, with a focus on reliability, identity/security, and clean DevOps.
