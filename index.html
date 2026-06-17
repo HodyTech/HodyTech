@@ -9,6 +9,10 @@
       content="HODY by Hodahel Moinzadeh — IT &amp; technology consulting, AI consulting and setup, systems automation and development, DevOps, and software development."
     />
     <meta name="theme-color" content="#05050a" />
+    <link rel="canonical" href="https://hody.dev/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Hodahel Moinzadeh" />
+    <meta name="keywords" content="AI consulting, technology consulting, systems automation, DevOps, software development, infrastructure automation, Hodahel Moinzadeh, hody" />
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="HODY" />
@@ -20,6 +24,12 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hody.dev/" />
     <meta property="og:image" content="https://hody.dev/assets/hody.png" />
+
+    <!-- Twitter / X cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HODY — Technology, AI &amp; Automation Consulting" />
+    <meta name="twitter:description" content="IT &amp; technology consulting, AI consulting and setup, systems automation, DevOps, and software development by Hodahel Moinzadeh." />
+    <meta name="twitter:image" content="https://hody.dev/assets/hody.png" />
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/png" href="assets/hody.png" />
@@ -37,13 +47,49 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "HODY",
-        "url": "https://hody.dev",
-        "image": "https://hody.dev/assets/hody.png",
-        "founder": { "@type": "Person", "name": "Hodahel Moinzadeh" },
-        "description": "Technology, AI and automation consulting and development.",
-        "sameAs": ["https://github.com/hodyhq", "https://hodahelmoinzadeh.com"]
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://hody.dev/#business",
+            "name": "HODY",
+            "url": "https://hody.dev",
+            "image": "https://hody.dev/assets/hody.png",
+            "description": "Technology, AI and automation consulting and development \u2014 IT consulting, AI setup, systems automation, DevOps, and custom software.",
+            "founder": { "@id": "https://hody.dev/#hody" },
+            "areaServed": "Worldwide",
+            "priceRange": "$$",
+            "sameAs": ["https://github.com/hodyhq", "https://hodahelmoinzadeh.com"],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT & Technology Consulting", "description": "Strategy, architecture, and hands-on guidance across infrastructure, cloud, identity, and security." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Consulting & Setup", "description": "Practical AI integration \u2014 model selection, deployment, and AI-driven workflows." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Systems Automation & Development", "description": "Eliminating manual work with scripting, integrations, and tooling." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DevOps", "description": "CI/CD, containers, and infrastructure-as-code for reliable delivery pipelines." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software Development & Programming", "description": "Custom software and computer programming, from internal tools to full applications." } }
+              ]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://hody.dev/#hody",
+            "name": "Hodahel Moinzadeh",
+            "alternateName": "Hody",
+            "url": "https://hody.dev",
+            "jobTitle": "AI Systems Engineer",
+            "knowsAbout": ["Artificial Intelligence", "Infrastructure Automation", "DevOps", "Identity & Access Management", "Cloud Architecture", "Self-hosting", "Software Development"],
+            "sameAs": ["https://github.com/hodyhq", "https://hodahelmoinzadeh.com", "https://www.linkedin.com/in/hodahel-moinzadeh"]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "What does HODY do?", "acceptedAnswer": { "@type": "Answer", "text": "HODY is the technology practice of Hodahel Moinzadeh, offering IT and technology consulting, AI consulting and setup, systems automation, DevOps, and custom software development for teams that want systems that just work." } },
+              { "@type": "Question", "name": "Does HODY offer AI consulting?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. HODY provides practical AI consulting and setup \u2014 model selection, deployment, and building AI-driven workflows that ship, not just proofs of concept." } },
+              { "@type": "Question", "name": "How do I get in touch with HODY?", "acceptedAnswer": { "@type": "Answer", "text": "Use the contact form at https://hody.dev to start a project, or reach Hodahel Moinzadeh via GitHub (github.com/hodyhq) or the portfolio at hodahelmoinzadeh.com." } }
+            ]
+          }
+        ]
       }
     </script>
   </head>
